@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Deep Obsidian Black */
+  --background: 0 0% 2%;       
+  --foreground: 46 65% 95%;    
+  
+  /* Luxury Gold */
+  --primary: 46 65% 52%;       
+  --primary-foreground: 0 0% 2%;
+  
+  --card: 0 0% 4%;
+  --card-foreground: 46 65% 95%;
+  --border: 46 65% 20%;
+  --ring: 46 65% 52%;
+  
+  --muted: 0 0% 12%;
+  --muted-foreground: 46 30% 60%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+  
+  ::selection {
+    @apply bg-primary/30 text-primary;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-primary/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)];
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.3);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+  }
+  
+  .text-glow-subtle {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+}
